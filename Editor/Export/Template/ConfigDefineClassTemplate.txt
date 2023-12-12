@@ -1,0 +1,14 @@
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+namespace TableDataConfig{
+
+public class [CONFIGNAME]Class
+{
+[FIELDNAMES]
+    public [CONFIGNAME]Class([CLASSPARAMS])
+    {
+[ASSIGNMENT]
+    }
+}

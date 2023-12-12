@@ -1,0 +1,88 @@
+public class [CONFIGNAME]
+{
+    public List<Dictionary<[FIRSTFIELDTYPE], [CONFIGNAME_CONVERT]Class>> GetCheckList()
+    {
+        return new List<Dictionary<[FIRSTFIELDTYPE], [CONFIGNAME_CONVERT]Class>>
+        {
+[checkListD]
+        };
+    }
+    
+    public [CONFIGNAME]()
+    {
+        Init();
+    }
+
+    private void Init()
+    {
+        mdata = new Dictionary<[FIRSTFIELDTYPE], [CONFIGNAME_CONVERT]Class>();
+        var checkList = GetCheckList();
+        int count = checkList.Count;
+        for (int i = 0; i < count; i++)
+        {
+            foreach (var item in checkList[i])
+                mdata.Add(item.Key, item.Value);
+        }
+
+        for (int i = count - 1; i >= 0; i--)
+            checkList[i].Clear();
+
+        checkList.Clear();
+    }
+
+    Dictionary<[FIRSTFIELDTYPE], [CONFIGNAME_CONVERT]Class> mdata;
+    
+    public Dictionary<[FIRSTFIELDTYPE], [CONFIGNAME_CONVERT]Class> data
+    {
+        get
+        {
+            if (null == mdata)
+            {
+                Init();
+            }
+            return mdata;
+        }
+    }
+
+    public bool Check([FIRSTFIELDTYPE] key)
+    {
+        return mdata?.ContainsKey(key) ?? GetCheckList().Any(item => item.ContainsKey(key));
+    }
+
+    public bool CheckAndGet([FIRSTFIELDTYPE] key, out [CONFIGNAME_CONVERT]Class config)
+    {
+        config = null;
+
+        if (null != mdata)
+            return mdata.TryGetValue(key, out config);
+        foreach (var item in GetCheckList())
+        {
+            if (!item.TryGetValue(key, out var value)) continue;
+            config = value;
+            return true;
+        }
+
+        return false;
+    }
+
+    public [CONFIGNAME_CONVERT]Class Get([FIRSTFIELDTYPE] key)
+    {
+        if (null != mdata)
+        {
+            if (mdata.TryGetValue(key, out var value))
+                return value;
+        }
+        else
+        {
+            foreach (var item in GetCheckList())
+            {
+                if (item.TryGetValue(key, out var value))
+                    return value;
+            }
+        }
+
+        return null;
+    }
+    [CONFIGDATATEMPLATE]
+}
+}

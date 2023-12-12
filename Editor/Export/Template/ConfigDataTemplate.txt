@@ -1,0 +1,10 @@
+private class [CONFIGNAME][INDEX]
+{
+    public static Dictionary<[FIRSTFIELDTYPE], [CONFIGNAME_CONVERT]Class> GetData()
+    {
+        return new Dictionary<[FIRSTFIELDTYPE], [CONFIGNAME_CONVERT]Class>()
+        { 
+[CONFIG_DATA]
+        };
+	}
+}
