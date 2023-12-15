@@ -2,8 +2,8 @@
     "name": "norlo.Exceltocs.Editor.Tests",
     "rootNamespace": "",
     "references": [
-        "Xsheen.Exceltocs.Editor",
-        "Xsheen.Exceltocs",
+        "norlo.Exceltocs.Editor",
+        "norlo.Exceltocs",
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner"
     ],

@@ -2,7 +2,7 @@
     "name": "norlo.Exceltocs.Editor",
     "rootNamespace": "",
     "references": [
-        "Xsheen.Exceltocs"
+        "norlo.Exceltocs"
     ],
     "includePlatforms": [
         "Editor"
@@ -10,7 +10,12 @@
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
-    "precompiledReferences": [],
+    "precompiledReferences": [
+        "NPOI.dll",
+        "NPOI.OOXML.dll",
+        "NPOI.OpenXml4Net.dll",
+        "NPOI.OpenXmlFormats.dll"
+    ],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
