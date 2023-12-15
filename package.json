@@ -3,5 +3,8 @@
   "displayName": "ExcelToCS",
   "version": "0.1.1",
   "unity": "2021.3",
-  "description": "\u6307\u5b9aExcel\u76ee\u5f55\u8f6c\u6362\u4e3acs\u6587\u4ef6"
+  "description": "\u6307\u5b9aExcel\u76ee\u5f55\u8f6c\u6362\u4e3acs\u6587\u4ef6",
+  "dependencies": {
+    "com.norlo.npoinuget": "https://github.com/Hestiny/NPOINuget.git"
+  }
 }
