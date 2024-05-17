@@ -1,7 +1,9 @@
+using System;
+using System.Collections.Generic;
 
 namespace TableDataConfig
 {
-    //====不要手动修改 会被覆盖====
+ //====不要手动修改 会被覆盖====
     //不依赖任何游戏逻辑 在所有数据和逻辑加载前加载 默认懒加载
     public class TableCfg
     {
@@ -25,6 +27,33 @@ namespace TableDataConfig
         /// </summary>
         public void InitLazy()
         {
+        }
+
+        private Dictionary<Type, object> _dataConfigDic = new Dictionary<Type, object>();
+        
+        public T GetDataConfig<T>(bool isSave = true) where T : new()
+        {
+            Type type = typeof(T);
+            if (_dataConfigDic.TryGetValue(type, out var data))
+            {
+                return (T)data;
+            }
+            else
+            {
+                var newData = new T();
+                if (isSave)
+                    _dataConfigDic.Add(type, newData);
+                return newData;
+            }
+        }
+
+        public void RemoveDataConfig<T>()
+        {
+            Type type = typeof(T);
+            if (_dataConfigDic.ContainsKey(type))
+            {
+                _dataConfigDic.Remove(type);
+            }
         }
        
     }
