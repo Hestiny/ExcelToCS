@@ -1,7 +1,7 @@
 {
   "name": "com.norlo.exceltocs",
   "displayName": "ExcelToCS",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "unity": "2021.3",
   "description": "\u6307\u5b9aExcel\u76ee\u5f55\u8f6c\u6362\u4e3acs\u6587\u4ef6\n\n\u9700\u8981NPOI\u7684nuget\u5305 \u53ef\u4ee5\u81ea\u884c\u4e0b\u8f7d\u6216\u8005\u76f4\u63a5\u5bfc\u5165\u5c01\u88c5\u8fc7\u7684package\nhttps://github.com/Hestiny/NPOINuget.git"
 }
